@@ -9,7 +9,7 @@ import {
   Settings, KeyRound, Calendar, Award, Bell, Shield, Activity, Eye,
   Users, Trash2, Plus, Edit3, Image, Download, CheckCircle, Info, LogOut, AlertCircle, FileVideo, Copy, Check 
 } from "lucide-react";
-import { DoanLogo, DoiLogo, ThanhNienLogo, DefaultLogoCluster } from "./OfficialLogos";
+import { DoanLogo, DoiLogo, HoiLogo, DefaultLogoCluster } from "./OfficialLogos";
 
 interface AdminPanelProps {
   weeks: WeekActivity[];
@@ -338,7 +338,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       setIsLoggedIn(true);
       setErrorMsg("");
     } else {
-      setErrorMsg("Tên đăng nhập hoặc mật mã bảo mật (2026) chưa chính xác!");
+      setErrorMsg("Tên đăng nhập hoặc mật khẩu chưa chính xác!");
     }
   };
 
@@ -702,7 +702,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
               <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1.5">Tên Đăng Nhập / Email</label>
               <input 
                 type="text" 
-                placeholder="ngsoanng@gmail.com hoặc 'admin'"
+                placeholder="Chỉ quản trị viên mới đăng nhập"
                 value={emailInput}
                 onChange={(e) => setEmailInput(e.target.value)}
                 className="w-full bg-slate-950 border border-slate-800 text-white placeholder-slate-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all font-sans"
@@ -711,10 +711,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1.5">Mật Mã An Toàn (2026)</label>
+              <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1.5">Mật Mã An Toàn</label>
               <input 
                 type="password" 
-                placeholder="Nhập mã bảo mật (gợi ý: 2026)"
+                placeholder="Nhập mật khẩu"
                 value={passcode}
                 onChange={(e) => setPasscode(e.target.value)}
                 className="w-full bg-slate-950 border border-slate-800 text-white placeholder-slate-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all font-sans"
